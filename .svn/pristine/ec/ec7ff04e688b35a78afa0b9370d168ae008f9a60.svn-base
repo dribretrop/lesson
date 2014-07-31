@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <body>
+        <?php
+            
+            //define variables set to empty
+            $name = $email = $gender = $comment = $website = "";
+            
+            if($_SERVER["REQUEST_METHOD"]=="POST"){
+                $name = test_input($_POST['name']);
+                $email = test_input($_POST['email']);
+                $gender = test_input($_POST['gender']);
+                $comment = test_input($_POST['comment']);
+                $website = test_input($_POST['website']);
+             }
+
+            function test_input($data){
+                $data=trim($data);
+                $data=str_replace('\\','',$data);  // stripslashes() remove only first backslash
+                $data=htmlspecialchars($data);
+                return $data;
+            }
+
+        ?>
+
+        <form method="post" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+        Name    : <input type="text" name="name"><br>
+        Email   : <input type="text" name="email"><br>
+        Website : <input type="text" name="website"><br>
+        Comment : <textarea rows="5" cols="40" name="comment"></textarea><br>
+        Gender  : 
+                <input type="radio" name="gender" value="Male">Male
+                <input type="radio" name="gender" value="Female">Female
+                <br>
+                <input type="submit" name="submit">
+            </form>
+
+        <?php
+            echo $name."<br>";
+            echo $email."<br>";
+            echo $website."<br>";
+            echo $comment."<br>";
+            echo $gender."<br>";
+      
+        ?>
+
+        test SVN
+
+    </body>
+</html>
