@@ -5,6 +5,19 @@
         <title></title>
     </head>
     <body>
+        
+
+        <form method="post" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+        Name    : <input type="text" name="name"><br>
+        Email   : <input type="text" name="email"><br>
+        Website : <input type="text" name="website"><br>
+        Comment : <textarea rows="5" cols="40" name="comment"></textarea><br>
+        Gender  : 
+                <input type="radio" name="gender" value="Male">Male
+                <input type="radio" name="gender" value="Female">Female
+                <br>
+                <input type="submit" name="submit">
+            </form>
         <?php
             
             //define variables set to empty
@@ -25,21 +38,6 @@
                 return $data;
             }
 
-        ?>
-
-        <form method="post" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>">
-        Name    : <input type="text" name="name"><br>
-        Email   : <input type="text" name="email"><br>
-        Website : <input type="text" name="website"><br>
-        Comment : <textarea rows="5" cols="40" name="comment"></textarea><br>
-        Gender  : 
-                <input type="radio" name="gender" value="Male">Male
-                <input type="radio" name="gender" value="Female">Female
-                <br>
-                <input type="submit" name="submit">
-            </form>
-
-        <?php
             echo $name."<br>";
             echo $email."<br>";
             echo $website."<br>";
