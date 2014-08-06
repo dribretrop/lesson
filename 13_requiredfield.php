@@ -2,14 +2,15 @@
 <head>
 <title>11_Requiedfield</title>
 </head>
+    
     <body>
         <?php
-            echo "test<br>";
+           // echo "test<br>";
             
             //valiable error and value
             $errName = $errEmail = $errWebsite = $errGender ="";
             $name = $email = $website = $gender = "";
-            echo "test<br>";
+            //echo "test<br>";
             
             if($_SERVER["REQUEST_METHOD"]=="POST") {
                 if(empty($_POST["name"])) {
@@ -36,8 +37,26 @@
             }
                
         ?>
+        <h1>Please input data</h1>
 
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+            Name : <input type="text" name="name"> <?php echo $errName; ?>
+            <br><br>
+            eMail : <input type="text" name="email"> <?php echo $errEmail; ?>
+            <br><br>
+            Website : <input type="text" name="website"> <?php echo $errWebsite; ?>
+            <br><br>
+            Gender : <input type="radio" name="gender" value="Male">Male
+                     <input type="radio" name="gender" value="Female">Female <?php echo $errGender; ?><br><br>
+            <input type="submit" name="submit" value="Submit">
+        </form>
        
+        <?php
+           echo "$name <br>";
+           echo "$email <br>";
+           echo "$website <br>";
+           echo "$gender <br>";
+       ?>
     </body>      
 
 
