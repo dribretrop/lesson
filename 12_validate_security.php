@@ -34,6 +34,7 @@
             function test_input($data){
                 $data=trim($data);
                 $data=str_replace('\\','',$data);  // stripslashes() remove only first backslash
+                $data=str_replace('/','',$data);
                 $data=htmlspecialchars($data);
                 return $data;
             }
