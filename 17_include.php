@@ -9,6 +9,6 @@
         <title></title>
     </head>
     <body>
-        
+        <?php include "/include/footer.php" ;?>
     </body>
 </html>

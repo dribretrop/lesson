@@ -68,6 +68,6 @@
             <input type="radio" name="gender" value="Female" <?php if ($gender=="Female") { echo "checked"; } ?>>Female <span id="error">* <?php echo $errGender ; ?></span><br>
             <input type="submit" name="submit" value="Submit">
         </form>
-        .
+        
     </body>
 </html>
