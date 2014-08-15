@@ -9,6 +9,11 @@
         <title></title>
     </head>
     <body>
-        <?php include "/include/footer.php" ;?>
+        <?php 
+            include "include/footer.php" ;
+            require "footer.php";
+            
+            
+        ?>
     </body>
 </html>
