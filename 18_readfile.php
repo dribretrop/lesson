@@ -4,7 +4,7 @@
     echo readfile('webdictionary.txt');
     echo readfile('files/webdictionary.txt');
     */
-    $files = fopen("webdictionary.txt","r") or die ("Can't open files");
+    $files = fopen("files/webdictionary.txt","r") or die ("Can't open files");
     echo fread($files,filesize("webdictionary.txt"));
     fclose($files);
 ?>
