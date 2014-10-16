@@ -10,11 +10,17 @@
     $last = $_POST['LastName'];
     $age = $_POST['Age'];
 
-    $sql = "INSERT INTO person (FirstName,LastName,Age) VALUES"
-    $query = mysqli_query($con,"INSERT INTO person (FirstName, LastName, Age) VALUES ();
-        
+    $input = array($_POST['FirstName'],$_POST['LastName'],$_POST['Age']);
+
+    echo $input[0];
+    echo "<br>";
+
+    $sql = "INSERT INTO person (FirstName,LastName,Age) VALUES ('$input[0]','$input[1]','$input[2]')";
+    
+    $query = mysqli_query($con,$sql);
+              
         if(!$query){
-            echo "error";
+            echo "error ID : ".mysqli_query_errno()." ".mysqli_error();
         }   else { 
                 echo "Added." ;}
                        
